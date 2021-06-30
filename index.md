@@ -7,10 +7,9 @@
     <title>Calendar</title>
 
     <style>
-       body {
-    font-family: 'times', sans-serif;
+        body {
+    font-family: 'Times', sans-serif;
     background-color: #c8ad7f;
-  height: 100vh;
 }
 
 .wrapper {
@@ -27,38 +26,23 @@ button::-moz-focus-inner {
 }
 
 #calendari {
-    margin: 20px 0;
-    position: relative;
-    overflow: hidden;
-    height: 310px;
-    width: 350px;
+    margin:  0 auto;
+    /* height: 330px; */
+    /* width: 350px; */
     font-size: 14px;
-    box-shadow: 0px 1px 4px rgba(0,0,0,0.4);
+    /* box-shadow: 0px 1px 4px rgba(0,0,0,0.4); */
 }
 table {
     border-collapse: collapse;
     table-layout: fixed;
-    width: 350px;
     box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
     background-color: #c8ad7f;
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateX(0);
-    transition: all 0.3s ease;
+
+
 }
-table.actiu {
-    transform: translateX(0px)top;
-}
-table.inactiu {
-    transition: all 0.3s 0.01s ease;
-}
-table.amagat-esquerra {
-    transform: translateX(-299px);
-}
-table.amagat-dreta {
-    transform: translateX(300px);
-}
+
+
 td,th {
     text-align: center;
     background-color: #fff;
@@ -79,7 +63,7 @@ td:last-child, th:last-child {
 th {
     border-top: 1px solid rgba(0,0,0,0.1);
     border-right: 1px solid rgba(0,0,0,0.1);
-    background-color: #b0976a;
+    background-color:#b0976a;
     color: #fff;
     text-shadow: 0px -1px 0px rgba(0,0,0,0.2);
     font-weight: normal;
@@ -189,13 +173,13 @@ footer a:link {
 ];
 
 var dies = [
-    'Dimanche',
-    'Lundi',
-    'Mardi',
-    'Mercredi',
-    'Jeudi',
-    'Vendredi',
-    'Samedi'
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wedensday',
+    'Thursday',
+    'Friday',
+    'Saturday'
 ];
 
 var dies_abr = [
