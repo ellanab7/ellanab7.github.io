@@ -1,10 +1,13 @@
-<div class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html" data-slug-hash="xxdbOZx" data-preview="true" data-editable="true" data-user="ellanab7"  data-prefill='{"title":"Calendrier notion","tags":[],"scripts":[],"stylesheets":[]}'>
-  <pre data-lang="html">&lt;div class="wrapper">
-  &lt;div id="calendari">&lt;/div>
-  &lt;footer>&lt;a href="http://boudra.me/">boudra.me&lt;/a>&lt;/footer>
-&lt;/div>
-</pre>
-  <pre data-lang="css">body {
+<!DOCTYPE html>
+<!-- original:https://codepen.io/boudra/pen/raErwP -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+
+    <style>
+       body {
     font-family: 'times', sans-serif;
     background-color: #c8ad7f;
   height: 100vh;
@@ -162,8 +165,15 @@ footer a,
 footer a:link {
   color: #fff;
   text-decoration: none;
-}</pre>
-  <pre data-lang="js">var mesos = [
+}
+    </style>
+</head>
+<body>
+    <div class="">
+        <div id="calendari"></div>
+      </div>
+      <script>
+        var mesos = [
     'Janvier',
     'Février',
     'Mars',
@@ -179,13 +189,13 @@ footer a:link {
 ];
 
 var dies = [
+    'Dimanche',
     'Lundi',
     'Mardi',
     'Mercredi',
     'Jeudi',
     'Vendredi',
-    'Samedi',
-    'Dimanche'
+    'Samedi'
 ];
 
 var dies_abr = [
@@ -200,7 +210,7 @@ var dies_abr = [
 
 Number.prototype.pad = function(num) {
     var str = '';
-    for(var i = 0; i &lt; (num-this.toString().length); i++)
+    for(var i = 0; i < (num-this.toString().length); i++)
         str += '0';
     return str += this.toString();
 }
@@ -250,7 +260,7 @@ function calendari(widget, data)
 
     titol.appendChild(boto_prev);
     titol.appendChild(document.createElement('span')).innerHTML = 
-        mesos[data.getMonth()] + '&lt;span class="any">' + data.getFullYear() + '&lt;/span>';
+        mesos[data.getMonth()] + '<span class="any">' + data.getFullYear() + '</span>';
 
     titol.appendChild(boto_next);
 
@@ -269,12 +279,12 @@ function calendari(widget, data)
 
     fila = document.createElement('tr');
 
-    for(var i = 1; i &lt; 7; i++)
+    for(var i = 1; i < 7; i++)
     {
-        fila.innerHTML += '&lt;th>' + dies_abr[i] + '&lt;/th>';
+        fila.innerHTML += '<th>' + dies_abr[i] + '</th>';
     }
 
-    fila.innerHTML += '&lt;th>' + dies_abr[0] + '&lt;/th>';
+    fila.innerHTML += '<th>' + dies_abr[0] + '</th>';
     e.appendChild(fila);
 
     /* Obtinc el dia que va acabar el mes anterior */
@@ -288,11 +298,11 @@ function calendari(widget, data)
     /* 6 setmanes per cobrir totes les posiblitats
      *  Quedaria mes consistent alhora de mostrar molts mesos 
      *  en una quadricula */
-    for(var s = 0; s &lt; 6; s++)
+    for(var s = 0; s < 6; s++)
     {
         var fila = document.createElement('tr');
 
-        for(var d = 1; d &lt; 8; d++)
+        for(var d = 1; d < 8; d++)
         {
 	    var cela = document.createElement('td');
 	    var span = document.createElement('span');
@@ -326,12 +336,14 @@ function calendari(widget, data)
 
     setTimeout(function() {
         var inactius = document.getElementsByClassName('inactiu');
-        for(var i = 0; i &lt; inactius.length; i++)
+        for(var i = 0; i < inactius.length; i++)
             widget.removeChild(inactius[i]);
     }, 1000);
 
 }
 
 calendari(document.getElementById('calendari'), new Date());
-</pre></div>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+    </script>
+</body>
+</html>
